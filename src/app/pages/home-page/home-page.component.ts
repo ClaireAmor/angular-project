@@ -8,18 +8,8 @@ import {NavbarModel} from "../../models/navbar.model";
 })
 export class HomePageComponent implements OnInit {
 
-  homeNavbarData: NavbarModel[];
+
   constructor() {
-    this.homeNavbarData = [
-      new NavbarModel({
-        name: "Home",
-        link: "home-page"
-      }),
-      new NavbarModel({
-        name: "contact",
-        link: "contact"
-      })
-    ]
   }
 
   ngOnInit(): void {
