@@ -4,13 +4,15 @@ import { CommonModule } from '@angular/common';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 @NgModule({
   imports: [
     CommonModule,
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    ButtonsModule.forRoot()
   ],
   exports: [BsDropdownModule, TooltipModule, ModalModule]
 })

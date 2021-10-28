@@ -19,7 +19,8 @@ import {RouterModule} from "@angular/router";
     RouterModule
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    ImagesViewComponent
   ]
 })
 export class SharedModule {
