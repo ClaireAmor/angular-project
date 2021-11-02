@@ -1,14 +1,3 @@
 <div class="row mt-5">
-  <div class="col-lg-4" *ngFor="let item of imagesViewList">
-    <div class="text-center bg-white team-box mt-3 p-5" [ngClass]="{'active':item.isLike === true}">
-      <div class="">
-        <img src="{{item.img}}" alt=""
-             class="img-fluid rounded-circle mx-auto d-block">
-      </div>
-      <div class="team-name">
-        <p class="fw-bold mb-0 mt-4">{{item.title}}</p>
-        <p class="text-muted mt-4">{{item.subtitle}}</p>
-      </div>
-    </div>
-  </div>
+  <app-image class="col-lg-4" *ngFor="let item of imagesViewList" [imageModel]="item"></app-image>
 </div>

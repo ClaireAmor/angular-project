@@ -5,13 +5,17 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { ImagesViewComponent } from './images-view/images-view.component';
 import { HeaderComponent } from './header/header.component';
 import {RouterModule} from "@angular/router";
+import { ButtonLikeComponent } from './button-like/button-like.component';
+import { ImageComponent } from './image/image.component';
 
 @NgModule({
   declarations: [
 
 
     ImagesViewComponent,
-         HeaderComponent
+         HeaderComponent,
+         ButtonLikeComponent,
+         ImageComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +24,8 @@ import {RouterModule} from "@angular/router";
   ],
   exports: [
     HeaderComponent,
-    ImagesViewComponent
+    ImagesViewComponent,
+    ButtonLikeComponent
   ]
 })
 export class SharedModule {
