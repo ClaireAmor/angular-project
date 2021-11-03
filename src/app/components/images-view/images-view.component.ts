@@ -9,7 +9,6 @@ import {ImagesViewsModel} from "../../models/interface/images-views.model";
 export class ImagesViewComponent implements OnInit {
 
   imagesViewList: ImagesViewsModel[];
-  toogleLike: boolean = true;
 
   constructor(private readonly changeDetectorRef: ChangeDetectorRef) {
     this.imagesViewList = [
@@ -37,6 +36,17 @@ export class ImagesViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onEmitToggleLikeEvent(event: boolean, index: number) {
+    console.log(event)
+    this.changeDetectorRef.detectChanges();
 
+    if(this.imagesViewList[index] !== undefined) {
+      if(event){
+        this.imagesViewList[index].numberOflike++;
+      } else {
+        this.imagesViewList[index].numberOflike--;
+      }
+    }
+  }
 
 }

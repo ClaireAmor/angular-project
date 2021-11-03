@@ -1,4 +1,4 @@
-import {ChangeDetectorRef, Component, Input, OnInit, SimpleChanges} from '@angular/core';
+import {ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output, SimpleChanges} from '@angular/core';
 import {ImagesViewsModel} from "../../models/interface/images-views.model";
 
 @Component({
@@ -9,6 +9,9 @@ import {ImagesViewsModel} from "../../models/interface/images-views.model";
 export class ImageComponent implements OnInit {
 
   @Input() imageModel: ImagesViewsModel = new ImagesViewsModel({});
+
+  @Output()toggleLikeEvent = new EventEmitter<boolean>();
+
   constructor(private readonly changeDetectorRef: ChangeDetectorRef) {
 
   }
@@ -25,7 +28,9 @@ export class ImageComponent implements OnInit {
   onEmitToggleLikeEvent(event: boolean) {
     console.log(event)
     this.changeDetectorRef.detectChanges();
-    // this.imagesViewList[event]
 
+    this.toggleLikeEvent.emit(event);
   }
+
+
 }

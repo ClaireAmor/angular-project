@@ -10,7 +10,7 @@ export class ButtonLikeComponent implements OnInit {
   @Output()toggleLikeEvent = new EventEmitter<boolean>();
   constructor() { }
 
-  result = false
+  result = true;
   emitToggleLikeEvent(event: boolean) {
     this.toggleLikeEvent.emit(event);
     this.result = !this.result;

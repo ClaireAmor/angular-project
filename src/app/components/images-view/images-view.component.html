@@ -1,3 +1,7 @@
 <div class="row mt-5">
-  <app-image class="col-lg-4" *ngFor="let item of imagesViewList" [imageModel]="item"></app-image>
+  <app-image
+    class="col-lg-4"
+    *ngFor="let item of imagesViewList; let index = index" [imageModel]="item"
+    (toggleLikeEvent)="onEmitToggleLikeEvent($event, index)"
+  ></app-image>
 </div>

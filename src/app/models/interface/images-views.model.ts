@@ -4,7 +4,7 @@ import {random} from "faker";
 export class ImagesViewsModel implements Model{
   readonly img: string;
   readonly title: string;
-  readonly numberOflike?: number;
+  numberOflike: number;
   readonly subtitle: string;
   readonly isLike?: boolean;
 
