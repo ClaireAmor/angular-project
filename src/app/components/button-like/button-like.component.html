@@ -1,2 +1,3 @@
-<p>button-like works!</p>
-<button class="btn-primary" (click)="emitToggleLikeEvent(result)">Like ! </button>
+<button class="btn btn-primary" (click)="emitToggleLikeEvent(result)">
+  {{ result ? 'Like 👍' : 'Dislike 👎' }}
+</button>

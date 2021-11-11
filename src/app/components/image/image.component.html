@@ -1,12 +1,15 @@
-<div class="text-center bg-white team-box mt-3 p-5" [ngClass]="{'active':imageModel.isLike === true}">
-  <div class="">
-    <img src="{{imageModel.img}}" alt=""
-         class="img-fluid rounded-circle mx-auto d-block">
+<div [ngClass]="{'image-liked':isLike}" class="card h-100">
+  <div class="card-header d-flex justify-content-start align-items-center">
+    <img src="{{imageModel.avatarImg}}" alt=""
+         class="rounded-circle me-3 image-avatar">
+    <p class="fw-bold mb-0">{{imageModel.title}}</p>
   </div>
-  <div class="team-name">
-    <p class="fw-bold mb-0 mt-4">{{imageModel.title}}</p>
-    <p class="text-muted mt-4">{{imageModel.numberOflike}}</p>
-    <p class="text-muted mt-4">{{imageModel.subtitle}}</p>
+  <img src="{{imageModel.postImg}}" alt="" class="card-img-top">
+  <div class="card-body">
+    <div class="team-name">
+      <p class="text-muted mt-4">{{imageModel.numberOflike}}</p>
+      <p class="text-muted mt-4">{{imageModel.subtitle}}</p>
+    </div>
   </div>
-  <app-button-like (toggleLikeEvent)="onEmitToggleLikeEvent($event)"></app-button-like>
+  <app-button-like class="d-flex justify-content-center mb-2" (toggleLikeEvent)="onEmitToggleLikeEvent($event)"></app-button-like>
 </div>

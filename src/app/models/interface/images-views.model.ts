@@ -2,17 +2,20 @@ import {Model} from "./model.interface";
 import {random} from "faker";
 
 export class ImagesViewsModel implements Model{
-  readonly img: string;
+  readonly avatarImg: string;
   readonly title: string;
+  readonly postImg: string;
   numberOflike: number;
   readonly subtitle: string;
-  readonly isLike?: boolean;
 
   constructor(input: Partial<ImagesViewsModel>) {
-    this.img = input.img || '';
+    this.avatarImg = input.avatarImg || '';
     this.title = input.title || '';
-    this.numberOflike = input.numberOflike || Math.floor(Math.random() * 5);
+    this.postImg = input.postImg || '';
+    this.numberOflike = input.numberOflike || Math.floor(Math.random() * 20);
     this.subtitle = input.subtitle || '';
-    this.isLike = input.isLike || false;
   }
+
 }
+
+export type ImagesViewList = ImagesViewsModel[];

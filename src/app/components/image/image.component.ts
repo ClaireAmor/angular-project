@@ -12,6 +12,8 @@ export class ImageComponent implements OnInit {
 
   @Output()toggleLikeEvent = new EventEmitter<boolean>();
 
+  isLike: boolean = false;
+
   constructor(private readonly changeDetectorRef: ChangeDetectorRef) {
 
   }
@@ -28,7 +30,7 @@ export class ImageComponent implements OnInit {
   onEmitToggleLikeEvent(event: boolean) {
     console.log(event)
     this.changeDetectorRef.detectChanges();
-
+    this.isLike = event;
     this.toggleLikeEvent.emit(event);
   }
 

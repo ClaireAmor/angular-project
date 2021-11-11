@@ -1,6 +1,6 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
 import * as faker from "faker"
-import {ImagesViewsModel} from "../../models/interface/images-views.model";
+import {ImagesViewList, ImagesViewsModel} from "../../models/interface/images-views.model";
 @Component({
   selector: 'app-images-view',
   templateUrl: './images-view.component.html',
@@ -8,29 +8,9 @@ import {ImagesViewsModel} from "../../models/interface/images-views.model";
 })
 export class ImagesViewComponent implements OnInit {
 
-  imagesViewList: ImagesViewsModel[];
+  @Input() imagesViewList: ImagesViewList = [];
 
   constructor(private readonly changeDetectorRef: ChangeDetectorRef) {
-    this.imagesViewList = [
-      new ImagesViewsModel({
-        img: faker.image.imageUrl( 140, 140, undefined, true, true),
-        title: "Post of " + faker.name.firstName(undefined) + " " + faker.name.lastName(),
-        subtitle : faker.lorem.paragraph(1),
-        isLike: false
-      }),
-      new ImagesViewsModel({
-        img: faker.image.imageUrl( 140, 140, undefined, true, true),
-        title: "Post of " + faker.name.firstName(undefined) + " " + faker.name.lastName(),
-        subtitle : faker.lorem.paragraph(1),
-        isLike: true
-      }),
-      new ImagesViewsModel({
-        img: faker.image.imageUrl( 140, 140, undefined, true, true),
-        title: "Post of " + faker.name.firstName(undefined) + " " + faker.name.lastName(),
-        subtitle : faker.lorem.paragraph(1),
-        isLike: false
-      })
-    ]
   }
 
   ngOnInit(): void {
@@ -43,6 +23,7 @@ export class ImagesViewComponent implements OnInit {
     if(this.imagesViewList[index] !== undefined) {
       if(event){
         this.imagesViewList[index].numberOflike++;
+
       } else {
         this.imagesViewList[index].numberOflike--;
       }
