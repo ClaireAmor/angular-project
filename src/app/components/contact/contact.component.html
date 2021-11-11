@@ -1,0 +1,64 @@
+<section class="section mt-5 pt-5 text-center" id="contact">
+  <h1>CONTACT US</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="custom-form mt-4 pt-4">
+          <form *ngIf="!suscribe" [formGroup]="contactForm" (ngSubmit)="submitForm()" method="post" name="myForm">
+            <p id="error-msg"></p>
+            <div id="simple-msg"></div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="form-group mt-2">
+                  <input formControlName="name" name="name" id="name" type="text" class="form-control"
+                         placeholder="Your name*">
+                  <span class="error" *ngIf="submitted && contactForm.controls.name.invalid">Champ en erreur</span>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="form-group mt-2">
+                  <input formControlName="email" name="email" id="email" type="email" class="form-control"
+                         placeholder="Your email*">
+                  <span class="error" *ngIf="submitted && contactForm.controls.email.invalid">Champ en erreur</span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="form-group mt-2">
+                  <input formControlName="subject" type="text" class="form-control" id="subject"
+                         placeholder="Your Subject.."/>
+                  <span class="error" *ngIf="submitted && contactForm.controls.subject.invalid">Champ en erreur</span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="form-group mt-2">
+                  <textarea formControlName="comment" name="comments" id="comments" rows="4"
+                            class="form-control"
+                            placeholder="Your message..."></textarea>
+                  <span class="error" *ngIf="submitted && contactForm.controls.comment.invalid">Champ en erreur</span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 text-right mt-4">
+                <button type="submit" id="submit" name="send" class="submitBnt btn btn-primary"
+                >Send a email
+                </button>
+                <div id="second-simple-msg"></div>
+              </div>
+            </div>
+          </form>
+          <div *ngIf="submitted && suscribe">
+            <h3 class="mb-4">Email send</h3>
+            <button (click)="returnForm()" class="btn btn-primary"
+            >Send a new email
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

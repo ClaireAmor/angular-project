@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
-import {ContactComponent} from "./contact/contact.component";
+import {ContactPageComponent} from "./contact-page/contact-page.component";
 
 const routes: Routes = [
   {
@@ -14,8 +14,8 @@ const routes: Routes = [
     component: HomePageComponent
   },
   {
-    path: 'contact', // correspond à http://localhost:51101/home-page
-    component: ContactComponent
+    path: 'contact-page', // correspond à http://localhost:51101/home-page
+    component: ContactPageComponent
   },
 ];
 

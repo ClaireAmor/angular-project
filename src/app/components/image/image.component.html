@@ -7,7 +7,7 @@
   <img src="{{imageModel.postImg}}" alt="" class="card-img-top">
   <div class="card-body">
     <div class="team-name">
-      <p class="text-muted mt-4">{{imageModel.numberOflike}}</p>
+      <p class="text-muted mt-4">{{imageModel.numberOflike | addLike}}</p>
       <p class="text-muted mt-4">{{imageModel.subtitle}}</p>
     </div>
   </div>

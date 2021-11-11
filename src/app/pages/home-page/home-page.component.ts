@@ -19,12 +19,14 @@ export class HomePageComponent implements OnInit {
           avatarImg: faker.image.imageUrl( 140, 140, "avatar", true, true),
           title: faker.name.firstName(undefined) + " " + faker.name.lastName(),
           postImg: faker.image.imageUrl( 500, 500, "animals", true, true),
+          numberOflike: 0,
           subtitle : faker.lorem.paragraph(1),
         }),
         new ImagesViewsModel({
           avatarImg: faker.image.imageUrl( 140, 140, "avatar", true, true),
           title: faker.name.firstName(undefined) + " " + faker.name.lastName(),
           postImg: faker.image.imageUrl( 500, 500, "nature", true, true),
+          numberOflike: 1,
           subtitle : faker.lorem.paragraph(1),
         }),
         new ImagesViewsModel({

@@ -12,7 +12,7 @@ export class ImagesViewsModel implements Model{
     this.avatarImg = input.avatarImg || '';
     this.title = input.title || '';
     this.postImg = input.postImg || '';
-    this.numberOflike = input.numberOflike || Math.floor(Math.random() * 20);
+    this.numberOflike = typeof input.numberOflike === "number" ? input.numberOflike : Math.floor(Math.random() * 20);
     this.subtitle = input.subtitle || '';
   }
 

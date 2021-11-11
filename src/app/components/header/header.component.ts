@@ -17,8 +17,8 @@ export class HeaderComponent implements OnInit {
         link: "home-page"
       }),
       new NavbarModel({
-        name: "contact",
-        link: "contact"
+        name: "Contact",
+        link: "contact-page"
       })
     ]
   }
